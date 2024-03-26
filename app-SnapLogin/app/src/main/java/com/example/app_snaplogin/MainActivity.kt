@@ -32,21 +32,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     // CTRL 0 -> See all methods
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        try{
+
+        try
+        {
             val bm = data?.extras?.get("data") as Bitmap
             //send the data --> imageview
             imgViewCamera.setImageBitmap(bm)
+
         } catch(ex:Exception)
         {
-            Toast.makeText(
-                this@MainActivity, "tk 4 da...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MainActivity, "tk 4 da...eish ya ting ain't graffing my man", Toast.LENGTH_SHORT).show()
         }
 
-
     }//methods ends
+
+    //Attributes -> onClick
     fun CaptureImage(View: View)
     {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -57,15 +59,15 @@ class MainActivity : AppCompatActivity() {
 
 
 
-/* CAMERA FEATURE RULES
+    /* CAMERA FEATURE RULES
 
--- Mediastore -- capture --> type of image
--- works with intent service
--- startActivityForResult -- images
+    -- Mediastore -- capture --> type of image
+    -- works with intent service
+    -- startActivityForResult -- images
     -- excepts a image result to be returned
-    1 -- request code -- handles which activity
-    2 -- result code -- whether it worked or not
-    3 -- data -- is the actual picture
-Bitmap -- image type and factory
+        1 -- request code -- handles which activity
+        2 -- result code -- whether it worked or not
+        3 -- data -- is the actual picture
+    Bitmap -- image type and factory
 
- */
+     */
